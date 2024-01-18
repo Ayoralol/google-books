@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import {InformationContext} from "../../context/InformationContextProvider";
 
 const Search = () => {
-  const {setSearch} = useContext(InformationContext);
+  const {setSearch, setPage} = useContext(InformationContext);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 

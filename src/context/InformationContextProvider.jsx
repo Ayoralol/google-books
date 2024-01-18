@@ -11,9 +11,14 @@ const InformationContextProvider = ({children}) => {
   const [page, setPage] = useState(0);
 
   useEffect(() => {
+    setPage(0);
+  }, [search]);
+
+  useEffect(() => {
     if (search.title || search.author) {
       bookSearch(search.title, search.author, page * 20)
         .then((data) => {
+          console.log(data);
           setResults(data);
         })
         .catch((err) => console.error(err));
