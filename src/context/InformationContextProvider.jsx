@@ -9,21 +9,28 @@ const InformationContextProvider = ({children}) => {
   const [selectedId, setSelectedId] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [firstSearch, setFirstSearch] = useState(true);
 
   useEffect(() => {
-    setPage(0);
-  }, [search]);
+    performSearch();
+  }, [search, page]);
 
-  useEffect(() => {
+  const performSearch = () => {
     if (search.title || search.author) {
+      setLoading(true);
+      setFirstSearch(false);
       bookSearch(search.title, search.author, page * 20)
         .then((data) => {
-          console.log(data);
           setResults(data);
+          setLoading(false);
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {
+          console.error(err);
+          setLoading(false);
+        });
     }
-  }, [search, page]);
+  };
 
   return (
     <InformationContext.Provider
@@ -37,6 +44,8 @@ const InformationContextProvider = ({children}) => {
         setShowModal,
         page,
         setPage,
+        loading,
+        firstSearch,
       }}>
       {children}
     </InformationContext.Provider>

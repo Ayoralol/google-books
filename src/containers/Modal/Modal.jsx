@@ -14,7 +14,7 @@ const Modal = () => {
     return null;
   }
 
-  const handleClose = () => {
+  const handleClose = (e) => {
     setShowModal(false);
   };
 
