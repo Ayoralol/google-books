@@ -1,3 +1,5 @@
+@import "../../palette/_palette.scss";
+
 .form {
   display: flex;
   justify-content: center;
@@ -13,17 +15,27 @@
       width: 40%;
       margin: 5px;
       border-radius: 5px;
-      border: 2px solid #ccc;
-      background-color: rgb(248, 247, 244);
+      border: 2px solid $color-accent-light;
+      background-color: $color-bg;
+      &:focus {
+        outline: none;
+        border: 2px solid $color-accent-dark;
+      }
     }
   }
   &__btn {
     border-radius: 5px;
     border: none;
-    background-color: rgb(248, 247, 244);
+    background-color: $color-bg;
     width: 20%;
     height: 25px;
-    border: 2px solid rgb(204, 203, 201);
+    border: 2px solid $color-accent-light;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $color-accent-dark;
+      background-color: $color-accent-light;
+    }
   }
 }
 

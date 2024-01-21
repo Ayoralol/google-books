@@ -1,9 +1,11 @@
+@import "../../palette/_palette.scss";
+
 .cont {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-top: 2px solid rgb(204, 203, 201);
-  border-bottom: 2px solid rgb(204, 203, 201);
+  border-top: 2px solid $color-primary;
+  border-bottom: 2px solid $color-primary;
   margin: 8px 0;
   padding: 0 5px;
   &__head {
@@ -11,6 +13,7 @@
   }
   &__auth {
     font-size: 16px;
+    font-style: italic;
   }
   &__body {
     display: flex;

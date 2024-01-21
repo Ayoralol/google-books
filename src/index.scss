@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+@import "./palette/_palette.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +23,7 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(247, 242, 235);
+  background-color: $color-bg;
 }
 
 @media screen and (orientation: landscape) {

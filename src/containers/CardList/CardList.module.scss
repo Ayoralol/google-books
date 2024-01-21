@@ -1,3 +1,5 @@
+@import "../../palette/_palette.scss";
+
 .other_text {
   font-size: 1.2rem;
   font-weight: 500;
@@ -21,10 +23,18 @@
       width: 35%;
       height: 22px;
       border-radius: 5px;
-      border: 2px solid rgb(204, 203, 201);
-      background-color: rgb(248, 247, 244);
+      border: 2px solid $color-accent-light;
+      background-color: $color-primary;
+      min-width: 90px;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        border: 2px solid $color-accent-dark;
+        background-color: $color-accent-light;
+      }
       &:disabled {
-        background-color: rgb(204, 203, 201);
+        background-color: $color-bg;
+        border: 2px solid rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -32,7 +42,7 @@
     overflow-y: auto;
     max-height: 100vh;
     margin-top: 5px;
-    background-color: rgb(247, 242, 235);
+    background-color: $color-bg;
   }
 }
 

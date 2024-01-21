@@ -1,11 +1,12 @@
+@import "../../palette/_palette.scss";
+
 .wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: rgb(236, 236, 236);
-  border-bottom: 2px solid rgb(129, 129, 129);
+  background-color: $color-primary;
   padding-bottom: 5px;
 }
 
