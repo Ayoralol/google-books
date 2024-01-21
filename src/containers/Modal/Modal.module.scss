@@ -1,0 +1,85 @@
+@import "../../palette/_palette.scss";
+
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.cont {
+  height: fit-content;
+  background-color: $color-primary;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  &__title {
+    margin: 15px;
+    color: $color-accent-dark;
+  }
+  &__auth {
+    font-style: italic;
+  }
+  &__date {
+    font-weight: 500;
+  }
+  &__pages {
+    font-weight: 500;
+  }
+  &__img {
+    max-width: 50%;
+  }
+  &__desc {
+  }
+  &__btn {
+    border-radius: 5px;
+    border: none;
+    background-color: $color-bg;
+    width: 20%;
+    height: 25px;
+    border: 2px solid $color-accent-light;
+    margin: 10px;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $color-accent-dark;
+      background-color: $color-accent-light;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  .cont {
+    width: 70%;
+    &__title {
+    }
+    &__auth {
+      margin: 10px;
+    }
+    &__img {
+    }
+    &__date {
+      margin: 10px;
+    }
+    &__pages {
+      margin: 10px;
+    }
+    &__desc {
+    }
+    &__btn {
+      margin: 10px;
+    }
+  }
+}

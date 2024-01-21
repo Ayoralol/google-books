@@ -1,0 +1,9 @@
+.sect {
+  width: 100vw;
+}
+
+@media screen and (orientation: landscape) {
+  .sect {
+    width: 82%;
+  }
+}
