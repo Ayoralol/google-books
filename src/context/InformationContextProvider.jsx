@@ -19,11 +19,13 @@ const InformationContextProvider = ({children}) => {
   const performSearch = () => {
     if (search.title || search.author) {
       setLoading(true);
+      setResults([]);
       setFirstSearch(false);
       bookSearch(search.title, search.author, page * 20)
         .then((data) => {
           setResults(data);
           setLoading(false);
+          console.log(data);
         })
         .catch((err) => {
           console.error(err);

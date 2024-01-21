@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {InformationContext} from "../../context/InformationContextProvider";
 import Card from "../../components/Card/Card";
+import styles from "./CardList.module.scss";
 
 const CardList = () => {
   const {
@@ -22,41 +23,42 @@ const CardList = () => {
   };
 
   if (firstSearch) {
-    return <p>Search for a book!</p>;
+    return <p className={styles.other_text}>Search for a book!</p>;
   }
 
   if (loading && (!items || items.length === 0)) {
-    return <p>Loading Books...</p>;
+    return <p className={styles.other_text}>Loading Books...</p>;
   }
 
   if (!items || items.length === 0) {
-    return <p>No Books Found...sorry!</p>;
+    return <p className={styles.other_text}>No Books Found...sorry!</p>;
   }
 
   return (
-    <main>
-      <div>
+    <main className={styles.main}>
+      <div className={styles.main__btn_wrap}>
         <button
           onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 0))}
-          disabled={page === 0}>
-          Previous
+          disabled={page === 0}
+          className={styles.main__btn_wrap__btn}>
+          Previous Page
         </button>
-        <p>
-          Page {page + 1} of {maxPage}
-        </p>
         <button
           onClick={() => setPage((prevPage) => prevPage + 1)}
-          disabled={page === maxPage}>
-          Next
+          disabled={page === maxPage}
+          className={styles.main__btn_wrap__btn}>
+          Next Page
         </button>
       </div>
-      {items.map((result, index) => (
-        <Card
-          key={index}
-          data={result}
-          onClick={() => handleClick(result.id)}
-        />
-      ))}
+      <div className={styles.main__card_wrap}>
+        {items.map((result, index) => (
+          <Card
+            key={index}
+            data={result}
+            onClick={() => handleClick(result.id)}
+          />
+        ))}
+      </div>
     </main>
   );
 };

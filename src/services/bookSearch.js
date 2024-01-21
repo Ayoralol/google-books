@@ -12,7 +12,6 @@ export const bookSearch = async (title, author, startIndex = 0) => {
 
   query += `&startIndex=${startIndex}&maxResults=${maxResults}`;
 
-  console.log(query);
   const response = await fetch(query);
   const data = await response.json();
   return data;

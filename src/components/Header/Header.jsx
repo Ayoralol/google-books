@@ -16,9 +16,11 @@ const Header = () => {
     searchString += `Author: ${search.author}`;
   }
 
+  searchString = searchString.trim().replace(/%20/g, " ");
+
   return (
     <header className={styles.head}>
-      <h1 className={styles.head__heading}>Google Books Search</h1>
+      <h1 className={styles.head__heading}>Google Books</h1>
       {!firstSearch ? (
         <div className={styles.head__lSearch}>
           <p className={styles.head__lSearch__text}>Last Search:</p>

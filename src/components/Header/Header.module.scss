@@ -1,18 +1,33 @@
 .head {
-  border: 1px solid #000;
+  // border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(236, 236, 236);
   &__heading {
-    font-family: Arial, Helvetica, sans-serif;
   }
   &__lSearch {
-    border: 1px solid #000;
-    height: 20px;
-    width: 20px;
+    // border: 1px solid #000;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     &__text {
-      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .head {
+    height: 120px;
+    &__lSearch {
+      &__text {
+      }
     }
   }
 }

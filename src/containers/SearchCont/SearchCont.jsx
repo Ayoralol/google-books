@@ -1,11 +1,10 @@
 import React, {useContext} from "react";
 import Search from "../../components/Search/Search";
-import {InformationContext} from "../../context/InformationContextProvider";
+import styles from "./SearchCont.module.scss";
 
 const SearchCont = () => {
-  const {results} = useContext(InformationContext);
   return (
-    <nav>
+    <nav className={styles.wrap}>
       <Search />
     </nav>
   );
